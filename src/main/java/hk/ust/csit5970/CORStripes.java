@@ -40,9 +40,15 @@ public class CORStripes extends Configured implements Tool {
 			// Please use this tokenizer! DO NOT implement a tokenizer by yourself!
 			String clean_doc = value.toString().replaceAll("[^a-z A-Z]", " ");
 			StringTokenizer doc_tokenizer = new StringTokenizer(clean_doc);
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+			while (doc_tokenizer.hasMoreTokens()) {
+					String word = doc_tokenizer.nextToken().toLowerCase();
+					word_set.put(word, word_set.getOrDefault(word, 0) + 1);
+			}
+			
+			for (Map.Entry<String, Integer> entry : word_set.entrySet()) {
+					context.write(new Text(entry.getKey()), new IntWritable(entry.getValue()));
+			}
 		}
 	}
 
@@ -53,9 +59,11 @@ public class CORStripes extends Configured implements Tool {
 			Reducer<Text, IntWritable, Text, IntWritable> {
 		@Override
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			int sum = 0;
+			for (IntWritable value : values) {
+					sum += value.get();
+			}
+			context.write(key, new IntWritable(sum));
 		}
 	}
 
@@ -72,9 +80,22 @@ public class CORStripes extends Configured implements Tool {
 			while (doc_tokenizers.hasMoreTokens()) {
 				sorted_word_set.add(doc_tokenizers.nextToken());
 			}
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+			for (String word : sorted_word_set) {
+					MapWritable stripe = new MapWritable();
+					
+					for (String coWord : sorted_word_set) {
+							if (!word.equals(coWord)) {
+									if (word.compareTo(coWord) < 0) {
+											stripe.put(new Text(coWord), new IntWritable(1));
+									}
+							}
+					}
+					
+					if (!stripe.isEmpty()) {
+							context.write(new Text(word), stripe);
+					}
+			}
 		}
 	}
 
@@ -86,9 +107,21 @@ public class CORStripes extends Configured implements Tool {
 
 		@Override
 		protected void reduce(Text key, Iterable<MapWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			MapWritable combinedStripe = new MapWritable();
+			
+			for (MapWritable stripe : values) {
+					for (Writable coWord : stripe.keySet()) {
+							IntWritable count = (IntWritable) stripe.get(coWord);
+							if (combinedStripe.containsKey(coWord)) {
+									IntWritable existingCount = (IntWritable) combinedStripe.get(coWord);
+									combinedStripe.put(coWord, new IntWritable(existingCount.get() + count.get()));
+							} else {
+									combinedStripe.put(coWord, count);
+							}
+					}
+			}
+			
+			context.write(key, combinedStripe);
 		}
 	}
 
@@ -139,9 +172,38 @@ public class CORStripes extends Configured implements Tool {
 		 */
 		@Override
 		protected void reduce(Text key, Iterable<MapWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+			String word = key.toString();
+			MapWritable combinedStripe = new MapWritable();
+			
+			for (MapWritable stripe : values) {
+					for (Writable coWord : stripe.keySet()) {
+							IntWritable count = (IntWritable) stripe.get(coWord);
+							if (combinedStripe.containsKey(coWord)) {
+									IntWritable existingCount = (IntWritable) combinedStripe.get(coWord);
+									combinedStripe.put(coWord, new IntWritable(existingCount.get() + count.get()));
+							} else {
+									combinedStripe.put(coWord, count);
+							}
+					}
+			}
+			
+			if (word_total_map.containsKey(word)) {
+					double wordFreq = word_total_map.get(word);
+					
+					for (Writable coWordWritable : combinedStripe.keySet()) {
+							String coWord = ((Text) coWordWritable).toString();
+							if (word_total_map.containsKey(coWord)) {
+									double coWordFreq = word_total_map.get(coWord);
+									int pairFreq = ((IntWritable) combinedStripe.get(coWordWritable)).get();
+									
+									double correlation = pairFreq / (wordFreq * coWordFreq);
+									
+									PairOfStrings pair = new PairOfStrings(word, coWord);
+									context.write(pair, new DoubleWritable(correlation));
+							}
+					}
+			}
 		}
 	}
 

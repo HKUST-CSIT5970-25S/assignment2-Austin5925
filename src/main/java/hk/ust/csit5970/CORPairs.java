@@ -50,9 +50,15 @@ public class CORPairs extends Configured implements Tool {
 			// Please use this tokenizer! DO NOT implement a tokenizer by yourself!
 			String clean_doc = value.toString().replaceAll("[^a-z A-Z]", " ");
 			StringTokenizer doc_tokenizer = new StringTokenizer(clean_doc);
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+			while (doc_tokenizer.hasMoreTokens()) {
+					String word = doc_tokenizer.nextToken().toLowerCase();
+					word_set.put(word, word_set.getOrDefault(word, 0) + 1);
+			}
+			
+			for (Map.Entry<String, Integer> entry : word_set.entrySet()) {
+					context.write(new Text(entry.getKey()), new IntWritable(entry.getValue()));
+			}
 		}
 	}
 
@@ -63,9 +69,11 @@ public class CORPairs extends Configured implements Tool {
 			Reducer<Text, IntWritable, Text, IntWritable> {
 		@Override
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			int sum = 0;
+			for (IntWritable value : values) {
+					sum += value.get();
+			}
+			context.write(key, new IntWritable(sum));
 		}
 	}
 
@@ -78,9 +86,25 @@ public class CORPairs extends Configured implements Tool {
 		protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			// Please use this tokenizer! DO NOT implement a tokenizer by yourself!
 			StringTokenizer doc_tokenizer = new StringTokenizer(value.toString().replaceAll("[^a-z A-Z]", " "));
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+			Set<String> uniqueWords = new HashSet<>();
+			while (doc_tokenizer.hasMoreTokens()) {
+					uniqueWords.add(doc_tokenizer.nextToken().toLowerCase());
+			}
+			
+			String[] words = uniqueWords.toArray(new String[0]);
+			
+			for (int i = 0; i < words.length; i++) {
+					for (int j = i + 1; j < words.length; j++) {
+							PairOfStrings pair;
+							if (words[i].compareTo(words[j]) < 0) {
+									pair = new PairOfStrings(words[i], words[j]);
+							} else {
+									pair = new PairOfStrings(words[j], words[i]);
+							}
+							context.write(pair, new IntWritable(1));
+					}
+			}
 		}
 	}
 
@@ -90,9 +114,11 @@ public class CORPairs extends Configured implements Tool {
 	private static class CORPairsCombiner2 extends Reducer<PairOfStrings, IntWritable, PairOfStrings, IntWritable> {
 		@Override
 		protected void reduce(PairOfStrings key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			int sum = 0;
+			for (IntWritable value : values) {
+					sum += value.get();
+			}
+			context.write(key, new IntWritable(sum));
 		}
 	}
 
@@ -142,9 +168,24 @@ public class CORPairs extends Configured implements Tool {
 		 */
 		@Override
 		protected void reduce(PairOfStrings key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			int pairCount = 0;
+			for (IntWritable value : values) {
+					pairCount += value.get();
+			}
+			
+			String leftWord = key.getLeftElement();
+			String rightWord = key.getRightElement();
+			
+			// Calculate correlation only if both words exist in the map
+			if (word_total_map.containsKey(leftWord) && word_total_map.containsKey(rightWord)) {
+					double leftFreq = word_total_map.get(leftWord);
+					double rightFreq = word_total_map.get(rightWord);
+					
+					// COR(A,B) = Freq(A,B) / (Freq(A) * Freq(B))
+					double correlation = pairCount / (leftFreq * rightFreq);
+					
+					context.write(key, new DoubleWritable(correlation));
+			}
 		}
 	}
 

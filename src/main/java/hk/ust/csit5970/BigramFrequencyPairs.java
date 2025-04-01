@@ -50,9 +50,15 @@ public class BigramFrequencyPairs extends Configured implements Tool {
 			String line = ((Text) value).toString();
 			String[] words = line.trim().split("\\s+");
 			
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			if (tokens.length < 2) return;
+			
+			for (int i = 0; i < tokens.length - 1; i++) {
+					BIGRAM.set(tokens[i], tokens[i+1]);
+					context.write(BIGRAM, ONE);  
+
+					BIGRAM.set(tokens[i], "*");
+					context.write(BIGRAM, ONE); 
+			}
 		}
 	}
 
@@ -68,12 +74,40 @@ public class BigramFrequencyPairs extends Configured implements Tool {
 		@Override
 		public void reduce(PairOfStrings key, Iterable<IntWritable> values,
 				Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+        String left = key.getLeftElement();
+        String right = key.getRightElement();
+        
+        int sum = 0;
+        for (IntWritable value : values) {
+            sum += value.get();
+        }
+        
+        if (!left.equals(currentWord) && currentWord != null) {
+            WORD.set(currentWord);
+            FREQUENCY.set(totalCount);
+            context.write(WORD, FREQUENCY);
+            totalCount = 0.0;
+        }
+        
+        currentWord = left;
+        
+        if (right.equals("*")) {
+            totalCount = sum;
+        } else {
+            WORD.set(left + "\t" + right);
+            FREQUENCY.set((double)sum / totalCount);
+            context.write(WORD, FREQUENCY);
+        }
 		}
 	}
 	
+	public static class MyPartitioner extends Partitioner<PairOfStrings, IntWritable> {
+    @Override
+    public int getPartition(PairOfStrings key, IntWritable value, int numReduceTasks) {
+        return (key.getLeftElement().hashCode() & Integer.MAX_VALUE) % numReduceTasks;
+    }
+	}
+
 	private static class MyCombiner extends
 			Reducer<PairOfStrings, IntWritable, PairOfStrings, IntWritable> {
 		private static final IntWritable SUM = new IntWritable();
@@ -81,9 +115,12 @@ public class BigramFrequencyPairs extends Configured implements Tool {
 		@Override
 		public void reduce(PairOfStrings key, Iterable<IntWritable> values,
 				Context context) throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			  int sum = 0;
+        for (IntWritable value : values) {
+          	sum += value.get();
+        }
+        SUM.set(sum);
+        context.write(key, SUM);
 		}
 	}
 

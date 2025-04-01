@@ -51,9 +51,15 @@ public class BigramFrequencyStripes extends Configured implements Tool {
 			String line = ((Text) value).toString();
 			String[] words = line.trim().split("\\s+");
 
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+			if (tokens.length < 2) return;
+			
+			for (int i = 0; i < tokens.length - 1; i++) {
+					WORD.set(tokens[i]);
+					
+					HashMapStringIntWritable stripe = new HashMapStringIntWritable();
+					stripe.put(tokens[i+1], 1);
+					context.write(WORD, stripe);
+			}
 		}
 	}
 
@@ -72,9 +78,28 @@ public class BigramFrequencyStripes extends Configured implements Tool {
 		public void reduce(Text key,
 				Iterable<HashMapStringIntWritable> stripes, Context context)
 				throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+        HashMapStringIntWritable combined = new HashMapStringIntWritable();
+        
+        for (HashMapStringIntWritable value : values) {
+            for (String nextWord : value.keySet()) {
+                combined.increment(nextWord, value.get(nextWord));
+            }
+        }
+        
+        int totalCount = 0;
+        for (String nextWord : combined.keySet()) {
+            totalCount += combined.get(nextWord);
+        }
+        
+        BIGRAM.set(key.toString());
+        FREQUENCY.set(totalCount);
+        context.write(BIGRAM, FREQUENCY);
+        
+        for (String nextWord : combined.keySet()) {
+            BIGRAM.set(key.toString() + "\t" + nextWord);
+            FREQUENCY.set((double)combined.get(nextWord) / totalCount);
+            context.write(BIGRAM, FREQUENCY);
+        }
 		}
 	}
 
@@ -91,9 +116,16 @@ public class BigramFrequencyStripes extends Configured implements Tool {
 		public void reduce(Text key,
 				Iterable<HashMapStringIntWritable> stripes, Context context)
 				throws IOException, InterruptedException {
-			/*
-			 * TODO: Your implementation goes here.
-			 */
+
+        HashMapStringIntWritable combined = new HashMapStringIntWritable();
+        
+        for (HashMapStringIntWritable value : values) {
+            for (String nextWord : value.keySet()) {
+                combined.increment(nextWord, value.get(nextWord));
+            }
+        }
+        
+        context.write(key, combined);
 		}
 	}
 

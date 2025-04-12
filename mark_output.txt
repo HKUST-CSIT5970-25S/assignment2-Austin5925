@@ -1,0 +1,259 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mhk.ust.csit5970:assignment-2[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding assignment-2 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36massignment-2[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36massignment-2[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36massignment-2[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 13 source files to /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/target/classes
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;33mWARNING[m] COMPILATION WARNING : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;33mWARNING[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/CORPairs.java: /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/CORPairs.java uses unchecked or unsafe operations.
+[[1;33mWARNING[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/CORPairs.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 2 warnings 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[130,24] class hk.ust.csit5970.BigramFrequencyPairs.MyPartitioner is already defined in class hk.ust.csit5970.BigramFrequencyPairs
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/PairOfStrings.java:[13,8] duplicate class: hk.ust.csit5970.PairOfStrings
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[53,29] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[55,45] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[56,52] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[56,63] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[59,52] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[85,26] cannot find symbol
+  symbol:   variable currentWord
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[85,42] cannot find symbol
+  symbol:   variable currentWord
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[86,22] cannot find symbol
+  symbol:   variable currentWord
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[86,13] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[87,27] cannot find symbol
+  symbol:   variable totalCount
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[87,13] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[88,27] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[88,33] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[89,13] cannot find symbol
+  symbol:   variable totalCount
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[92,9] cannot find symbol
+  symbol:   variable currentWord
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[95,13] cannot find symbol
+  symbol:   variable totalCount
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[97,13] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[98,41] cannot find symbol
+  symbol:   variable totalCount
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[98,13] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[99,27] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[99,33] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[54,29] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[56,45] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[57,50] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[57,41] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[60,52] cannot find symbol
+  symbol:   variable tokens
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[61,55] cannot find symbol
+  symbol:   variable WORD
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[83,47] cannot find symbol
+  symbol:   variable values
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[94,15] method set in class hk.ust.csit5970.PairOfStrings cannot be applied to given types;
+  required: java.lang.String,java.lang.String
+  found: java.lang.String
+  reason: actual and formal argument lists differ in length
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[95,9] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[96,31] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[99,19] method set in class hk.ust.csit5970.PairOfStrings cannot be applied to given types;
+  required: java.lang.String,java.lang.String
+  found: java.lang.String
+  reason: actual and formal argument lists differ in length
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[100,13] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[101,35] cannot find symbol
+  symbol:   variable FREQUENCY
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[122,47] cannot find symbol
+  symbol:   variable values
+  location: class hk.ust.csit5970.BigramFrequencyStripes.MyCombiner
+[[1;34mINFO[m] 37 errors 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.146 s
+[[1;34mINFO[m] Finished at: 2025-04-12T05:41:11Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.1:compile[m [1m(default-compile)[m on project [36massignment-2[m: [1;31mCompilation failure[m: Compilation failure: 
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[130,24] class hk.ust.csit5970.BigramFrequencyPairs.MyPartitioner is already defined in class hk.ust.csit5970.BigramFrequencyPairs
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/PairOfStrings.java:[13,8] duplicate class: hk.ust.csit5970.PairOfStrings
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[53,29] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[55,45] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[56,52] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[56,63] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[59,52] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[85,26] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable currentWord
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[85,42] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable currentWord
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[86,22] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable currentWord
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[86,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[87,27] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable totalCount
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[87,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[88,27] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[88,33] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[89,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable totalCount
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[92,9] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable currentWord
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[95,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable totalCount
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[97,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[98,41] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable totalCount
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[98,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[99,27] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyPairs.java:[99,33] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyPairs.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[54,29] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[56,45] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[57,50] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[57,41] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[60,52] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable tokens
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[61,55] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable WORD
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyMapper
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[83,47] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable values
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[94,15] method set in class hk.ust.csit5970.PairOfStrings cannot be applied to given types;
+[[1;31mERROR[m]   required: java.lang.String,java.lang.String
+[[1;31mERROR[m]   found: java.lang.String
+[[1;31mERROR[m]   reason: actual and formal argument lists differ in length
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[95,9] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[96,31] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[99,19] method set in class hk.ust.csit5970.PairOfStrings cannot be applied to given types;
+[[1;31mERROR[m]   required: java.lang.String,java.lang.String
+[[1;31mERROR[m]   found: java.lang.String
+[[1;31mERROR[m]   reason: actual and formal argument lists differ in length
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[100,13] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[101,35] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable FREQUENCY
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyReducer
+[[1;31mERROR[m] /home/ubuntu/CSIT5970/assignment-2/assignment2-Austin5925/src/main/java/hk/ust/csit5970/BigramFrequencyStripes.java:[122,47] cannot find symbol
+[[1;31mERROR[m]   symbol:   variable values
+[[1;31mERROR[m]   location: class hk.ust.csit5970.BigramFrequencyStripes.MyCombiner
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
